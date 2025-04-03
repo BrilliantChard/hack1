@@ -1,88 +1,272 @@
-/* about.css */
+/* about.css - Complete Responsive Version */
 
+:root {
+  --primary-color: #2a9d8f;
+  --secondary-color: #264653;
+  --accent-color: #e9c46a;
+  --accent-hover: #f4a261;
+  --text-light: rgba(255, 255, 255, 0.9);
+  --shadow-default: 0 8px 25px rgba(0, 0, 0, 0.2);
+  --shadow-hover: 0 12px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Base Section Styles */
 .about-section {
-    padding: 60px 20px;
-    background-color: #5aea5a; /* Soft background color */
-    color: #333;
-    text-align: center;
+  padding: 4rem 1rem;
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  color: white;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.about-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.05;
+  pointer-events: none;
+}
+
+/* Content Container */
+.about-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+  animation: fadeInUp 1s ease-out;
+  padding: 2rem;
+  width: 100%;
+}
+
+/* Typography */
+.about-section h2 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 700;
+  color: var(--accent-color);
+  margin-bottom: 1.5rem;
+  font-family: 'Arial', sans-serif;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  line-height: 1.2;
+}
+
+.about-section p {
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
+  color: var(--text-light);
+  line-height: 1.8;
+  max-width: 800px;
+  margin: 0 auto 2rem;
+  text-align: center;
+  font-family: 'Arial', sans-serif;
+  padding: 0 1rem;
+}
+
+.about-section ul {
+  text-align: left;
+  display: inline-block;
+  margin: 1rem auto;
+  padding-left: 1.5rem;
+  max-width: 700px;
+}
+
+.about-section li {
+  margin-bottom: 0.8rem;
+  font-size: clamp(0.9rem, 2vw, 1.1rem);
+  line-height: 1.6;
+}
+
+/* Image Styles */
+.about-image {
+  margin: 2rem auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 1rem;
+  position: relative;
+}
+
+.about-image img {
+  width: clamp(120px, 30vw, 220px);
+  height: clamp(120px, 30vw, 220px);
+  border-radius: 50%;
+  border: clamp(3px, 0.5vw, 5px) solid var(--accent-color);
+  object-fit: cover;
+  object-position: center;
+  box-shadow: var(--shadow-default);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  will-change: transform;
+  backface-visibility: hidden;
+}
+
+/* Decorative Elements */
+.about-decoration {
+  position: absolute;
+  width: clamp(100px, 25vw, 200px);
+  height: clamp(100px, 25vw, 200px);
+  border-radius: 50%;
+  background: rgba(233, 196, 106, 0.1);
+  z-index: 0;
+}
+
+.decoration-1 {
+  top: -5%;
+  left: -5%;
+}
+
+.decoration-2 {
+  bottom: -8%;
+  right: -3%;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
   }
-  
-  
-  .about-section h2 {
-    font-size: 3rem;
-    font-weight: bold;
-    color: #00aaff; /* Accent color */
-    margin-bottom: 30px;
-    font-family: 'Arial', sans-serif;
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
-  
-  .about-section p {
-    font-size: 1.2rem;
-    color: #555;
-    line-height: 1.8;
-    max-width: 900px;
-    margin: 0 auto 20px auto;
-    text-align: justify; /* Better text alignment */
-    font-family: 'Arial', sans-serif;
+}
+
+/* Interactive States */
+@media (hover: hover) and (pointer: fine) {
+  .about-image img:hover,
+  .about-image img:focus {
+    transform: scale(1.08) rotate(2deg);
+    box-shadow: var(--shadow-hover);
+    border-color: var(--accent-hover);
   }
-  
-  .about-section .btn-primary {
-    padding: 12px 30px;
-    font-size: 1.2rem;
-    background-color: #00aaff;
-    color: white;
-    border: none;
-    border-radius: 30px;
-    cursor: pointer;
-    text-decoration: none; /* Remove underline */
-    display: inline-block;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    margin-top: 20px;
-  }
-  
-  .about-section .btn-primary:hover {
-    background-color: #ffcc00;
-    transform: translateY(-3px); /* Slight hover effect */
-  }
-  
-  .about-section .btn-primary:active {
-    background-color: #ff9900; /* Darker color when clicked */
-    transform: translateY(0); /* Reset transform on click */
-  }
-  
-  /* Responsiveness for smaller screens */
-  @media screen and (max-width: 768px) {
-    .about-section {
-      padding: 40px 15px;
-    }
-  
-    .about-section h2 {
-      font-size: 2rem;
-    }
-  
-    .about-section p {
-      font-size: 1rem;
-      max-width: 100%;
-    }
-  
-    .about-section .btn-primary {
-      font-size: 1rem;
-      padding: 10px 25px;
-    }
-  }
-  
-  .about-image {
-    margin-top: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+}
+
+/* Responsive Breakpoints */
+/* Mobile (default styles above) */
+
+/* Small Mobile (<= 360px) */
+@media (max-width: 360px) {
+  .about-section {
+    padding: 3rem 0.5rem;
   }
   
   .about-image img {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%; /* Make the image circular */
-    border: 5px solid #00aaff; /* Add a border around the image */
-    object-fit: cover; /* Ensure the image fits well */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add subtle shadow for effect */
+    width: clamp(90px, 35vw, 120px);
+    height: clamp(90px, 35vw, 120px);
   }
+}
+
+/* Tablet (>= 768px) */
+@media (min-width: 768px) {
+  .about-section {
+    padding: 6rem 2rem;
+  }
+  
+  .about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+    text-align: left;
+  }
+
+  .about-section h2,
+  .about-section p,
+  .about-section ul {
+    text-align: left;
+    margin-left: 0;
+  }
+
+  .about-image {
+    margin: 0;
+    order: 2;
+  }
+}
+
+/* Desktop (>= 1024px) */
+@media (min-width: 1024px) {
+  .about-section {
+    padding: 8rem 3rem;
+  }
+
+  .about-image img {
+    width: clamp(180px, 25vw, 250px);
+    height: clamp(180px, 25vw, 250px);
+  }
+}
+
+/* Landscape Tablets */
+@media (min-width: 768px) and (orientation: landscape) {
+  .about-image img {
+    width: clamp(140px, 20vw, 200px);
+    height: clamp(140px, 20vw, 200px);
+  }
+}
+
+/* High-DPI Displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) { 
+  .about-image img {
+    border-width: clamp(4px, 0.6vw, 6px);
+  }
+}
+
+/* Reduced Motion Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .about-content {
+    animation: none;
+  }
+  
+  .about-image img {
+    transition: none;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .about-section {
+    background: white !important;
+    color: black !important;
+    min-height: auto;
+    padding: 2rem !important;
+  }
+  
+  .about-image img {
+    border-color: black !important;
+    filter: grayscale(100%);
+  }
+}
+/* PDF Viewer Styles */
+.cv-viewer-container {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-top: 2rem;
+}
+
+.pdf-container {
+  max-width: 100%;
+  overflow-x: auto;
+  background: #f5f5f5;
+}
+
+.pdf-page {
+  margin: 0 auto;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .pdf-container {
+    width: 100%;
+  }
+  
+  .pdf-page {
+    width: 100% !important;
+  }
+}

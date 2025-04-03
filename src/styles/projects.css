@@ -1,61 +1,155 @@
+/* projects.css - Animated Gradient Version */
+
 .projects-section {
-    padding: 50px 20px;
-    background-color: #f9f9f9;
+  padding: 50px 20px;
+  background: linear-gradient(135deg, #00b4db 0%, #0083b0 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.projects-section::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at center, 
+            rgba(255,255,255,0.15) 0%, 
+            transparent 50%);
+  animation: rotateGradient 25s linear infinite;
+  z-index: 0;
+}
+
+.projects-content {
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.projects-section h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 30px;
+  text-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  animation: fadeIn 1s ease-out;
+}
+
+.project-item {
+  background-color: rgba(255, 255, 255, 0.96);
+  padding: 25px;
+  border-radius: 10px;
+  margin-bottom: 25px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  opacity: 0;
+  transform: translateY(-120px) rotate(-10deg) rotateX(30deg);
+  animation: fallAndSpin 1.4s cubic-bezier(0.42, 0, 0.32, 1.42) forwards;
+  transform-origin: top center;
+  will-change: transform, opacity;
+  backdrop-filter: blur(3px);
+  border: 1px solid rgba(255,255,255,0.3);
+}
+
+/* Sequential Falling Animation */
+.project-item:nth-child(1) { animation-delay: 0.2s; }
+.project-item:nth-child(2) { animation-delay: 0.4s; }
+.project-item:nth-child(3) { animation-delay: 0.6s; }
+
+.project-item h3 {
+  font-size: 1.8rem;
+  color: #0083b0;
+  margin-bottom: 12px;
+}
+
+.project-item p {
+  font-size: 1.2rem;
+  color: #555;
+  line-height: 1.7;
+  margin-bottom: 15px;
+}
+
+.tech-stack {
+  display: inline-block;
+  background: #00b4db;
+  color: white;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin: 0.2rem;
+}
+
+.project-item:hover {
+  transform: translateY(-8px) scale(1.02) rotate(0deg);
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  background-color: white;
+}
+
+/* Animation Definitions */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fallAndSpin {
+  0% {
+      opacity: 0;
+      transform: translateY(-120px) rotate(-10deg) rotateX(30deg);
   }
-  
-  .projects-content {
-    max-width: 1000px;
-    margin: 0 auto;
-    text-align: center;
+  50% {
+      opacity: 0.9;
+      transform: translateY(30px) rotate(3deg) rotateX(10deg);
   }
-  
+  75% {
+      transform: translateY(-5px) rotate(-1deg) rotateX(5deg);
+  }
+  100% {
+      opacity: 1;
+      transform: translateY(0) rotate(0deg) rotateX(0deg);
+  }
+}
+
+@keyframes rotateGradient {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  .project-item,
   .projects-section h2 {
-    font-size: 2.5rem;
-    font-weight: bold;
-    color: #333;
-    margin-bottom: 30px;
+      animation: none !important;
+      opacity: 1;
+      transform: none;
   }
-  
-  .project-item {
-    background-color: #ffffff;
-    padding: 20px;
-    border-radius: 8px;
-    margin-bottom: 20px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  .projects-section::before {
+      animation: none;
   }
-  
-  .project-item h3 {
-    font-size: 1.8rem;
-    color: #00aaff;
-    margin-bottom: 10px;
-  }
-  
-  .project-item p {
-    font-size: 1.2rem;
-    color: #555;
-    line-height: 1.6;
-  }
-  
-  .project-item:hover {
-    transform: translateY(-10px);
-    transition: transform 0.3s ease-in-out;
-  }
-  
-  @media screen and (max-width: 768px) {
-    .projects-section {
+}
+
+@media screen and (max-width: 768px) {
+  .projects-section {
       padding: 40px 20px;
-    }
-  
-    .project-item {
-      padding: 15px;
-    }
-  
-    .project-item h3 {
+  }
+
+  .project-item {
+      padding: 20px;
+      animation-duration: 1.1s;
+  }
+
+  .project-item h3 {
       font-size: 1.5rem;
-    }
-  
-    .project-item p {
+  }
+
+  .project-item p {
       font-size: 1rem;
-    }
   }
   
+  .tech-stack {
+      font-size: 0.8rem;
+  }
+}
