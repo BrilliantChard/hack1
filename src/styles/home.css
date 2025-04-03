@@ -1,0 +1,128 @@
+/* home.css */
+
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Full viewport height for home section */
+  .home-section {
+    height: 100vh; /* Full viewport height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #1a1a2e; /* Dark background for home section */
+    color: #fff;
+    padding: 20px;
+    position: relative;
+  }
+  
+  /* Centralized content container */
+  .home-content {
+    text-align: center;
+    max-width: 1000px; /* Ensures it doesn't stretch too wide */
+    margin: 0 auto;
+  }
+  
+  /* Title Styling */
+  .home-content h1 {
+    font-size: 3rem; /* Large size for visibility */
+    font-weight: 700;
+    color: #00aaff; /* Accent color */
+    margin-bottom: 20px; /* Space below the title */
+  }
+  
+  /* Paragraph Styling */
+  .home-content p {
+    font-size: 1.25rem;
+    line-height: 1.6;
+    margin-bottom: 30px; /* Adds space below the paragraph */
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  /* Button Styling */
+  .btn-primary {
+    padding: 12px 30px;
+    font-size: 1.2rem;
+    background-color: #00aaff;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    text-decoration: none; /* Remove underline */
+    display: inline-block;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  /* Button Hover Effect */
+  .btn-primary:hover {
+    background-color: #ffcc00; /* Change color on hover */
+    transform: translateY(-3px); /* Slight lift effect */
+  }
+  
+  /* Button Active Effect */
+  .btn-primary:active {
+    background-color: #ff9900; /* Change color on click */
+    transform: translateY(0); /* Reverts lift effect */
+  }
+  
+  /* Responsive Design: Mobile First */
+  
+  /* Smaller screens adjustments */
+  @media screen and (max-width: 768px) {
+    .home-content h1 {
+      font-size: 2rem; /* Smaller title size on mobile */
+    }
+  
+    .home-content p {
+      font-size: 1rem; /* Smaller paragraph text */
+      padding: 0 15px; /* Add padding for smaller screens */
+    }
+  
+    .btn-primary {
+      font-size: 1rem; /* Smaller button text */
+      padding: 10px 25px; /* Adjust padding for smaller screens */
+    }
+  }
+  
+  /* Smooth scroll for anchor links */
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  /* Animation for home section (optional) */
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .home-content {
+    animation: fadeInUp 1s ease-out;
+  }
+  
+ /* Styling for image */
+.home-image {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .home-image img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%; /* Make the image circular */
+    border: 5px solid #00aaff; /* Add a border around the image */
+    object-fit: cover; /* Ensure the image fits well */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add subtle shadow for effect */
+  }

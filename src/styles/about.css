@@ -1,0 +1,88 @@
+/* about.css */
+
+.about-section {
+    padding: 60px 20px;
+    background-color: #5aea5a; /* Soft background color */
+    color: #333;
+    text-align: center;
+  }
+  
+  
+  .about-section h2 {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #00aaff; /* Accent color */
+    margin-bottom: 30px;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .about-section p {
+    font-size: 1.2rem;
+    color: #555;
+    line-height: 1.8;
+    max-width: 900px;
+    margin: 0 auto 20px auto;
+    text-align: justify; /* Better text alignment */
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .about-section .btn-primary {
+    padding: 12px 30px;
+    font-size: 1.2rem;
+    background-color: #00aaff;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    text-decoration: none; /* Remove underline */
+    display: inline-block;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-top: 20px;
+  }
+  
+  .about-section .btn-primary:hover {
+    background-color: #ffcc00;
+    transform: translateY(-3px); /* Slight hover effect */
+  }
+  
+  .about-section .btn-primary:active {
+    background-color: #ff9900; /* Darker color when clicked */
+    transform: translateY(0); /* Reset transform on click */
+  }
+  
+  /* Responsiveness for smaller screens */
+  @media screen and (max-width: 768px) {
+    .about-section {
+      padding: 40px 15px;
+    }
+  
+    .about-section h2 {
+      font-size: 2rem;
+    }
+  
+    .about-section p {
+      font-size: 1rem;
+      max-width: 100%;
+    }
+  
+    .about-section .btn-primary {
+      font-size: 1rem;
+      padding: 10px 25px;
+    }
+  }
+  
+  .about-image {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .about-image img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%; /* Make the image circular */
+    border: 5px solid #00aaff; /* Add a border around the image */
+    object-fit: cover; /* Ensure the image fits well */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add subtle shadow for effect */
+  }
