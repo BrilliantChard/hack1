@@ -1,184 +1,172 @@
 /* Global Styling */
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #1a1a2e;
-    color: #fff;
-    margin: 0;
-    padding: 0;
-  }
-  html {
-    scroll-behavior: smooth;
-  }
-  
-  
-  /* Link Styling */
-  a {
-    color: #00aaff;
-    text-decoration: none;
-    transition: color 0.3s;
-  }
-  
-  a:hover {
-    color: #ffcc00;
-  }
-  
-  /* Navigation Styling */
-  nav {
-    background-color: #2d2d2d;
-    padding: 16px 32px;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 50;
-  }
-  
-  nav .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  nav h1 {
-    font-size: 24px;
-    font-weight: bold;
-    color: #00aaff;
-  }
-  
-  nav ul {
-    display: flex;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-  
-  nav ul li {
-    margin-left: 20px;
-  }
-  
-  nav ul li a {
-    color: #fff;
-    font-size: 18px;
-    text-transform: uppercase;
-    font-weight: 500;
-    transition: color 0.3s ease;
-  }
-  
-  nav ul li a:hover {
-    color: #ffcc00;
-  }
-  
-  /* Adding margin-top for content to not overlap with nav */
-  .mt-20 {
-    margin-top: 80px;
-  }
-  
-  /* Other global styles */
-  h1, h2, h3 {
-    color: #00aaff;
-  }
-  
-  .learn-more-link {
-    color: #00aaff;
-    font-size: 18px;
-    text-decoration: none;
-    transition: color 0.3s ease;
-  }
-  
-  .learn-more-link:hover {
-    color: #ffcc00;
-  }
-  /* Global Styling */
+  font-family: 'Arial', sans-serif;
+  background-color: #1a1a2e;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Link Styling */
+a {
+  color: #00aaff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+a:hover {
+  color: #ffcc00;
+}
+
+/* Navigation Styling */
+nav {
+  background-color: #2d2d2d;
+  padding: 32px 16px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 50;
+}
+
+nav .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+nav h1 {
+  font-size: 36px;
+  font-weight: bold;
+  color: #00aaff;
+  margin-bottom: 16px;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  margin: 0 20px;
+}
+
+nav ul li a {
+  color: #fff;
+  font-size: 18px;
+  text-transform: none; /* Keep text as it is */
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #ffcc00;
+}
+
+/* Mobile Navigation Toggle Button */
+.md\\:hidden {
+  position: absolute;
+  top: 16px; /* Adjust the distance from the top */
+  right: 16px; /* Adjust the distance from the right */
+  z-index: 100; /* Ensure it stays above other elements */
+  cursor: pointer;
+}
+
+.md\\:hidden button {
+  background: transparent;
+  border: none;
+  padding: 10px;
+  transition: all 0.3s;
+}
+
+.md\\:hidden button:hover {
+  color: #00aaff; /* Optional: Change color when hovering over the button */
+}
+
+/* Mobile Navigation Menu */
+.md\\:hidden ul {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.md\\:hidden ul li {
+  margin: 10px 0;
+}
+
+.md\\:hidden ul li a {
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.md\\:hidden ul li a:hover {
+  background-color: #00aaff;
+}
+
+/* Adding margin-top for content to not overlap with nav */
+.mt-20 {
+  margin-top: 100px; /* Adjusted to give more space from the top */
+}
+
+/* Footer Styling */
+footer {
+  background-color: #2d2d2d;
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+  margin-top: 40px;
+}
+
+footer a {
+  color: #00aaff;
+  text-decoration: none;
+  margin-left: 10px;
+}
+
+footer a:hover {
+  color: #ffcc00;
+}
+
+footer .footer-info {
+  margin-top: 10px;
+}
+
+/* Additional General Styling */
+h1, h2, h3 {
+  color: #00aaff;
+}
+
+.learn-more-link {
+  color: #00aaff;
+  font-size: 18px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.learn-more-link:hover {
+  color: #ffcc00;
+}
+
+/* Ensure content is not overlapping with the nav bar */
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #1a1a2e;
-    color: #fff;
-    margin: 0;
-    padding: 0;
-  }
-  
-  /* Link Styling */
-  a {
-    color: #00aaff;
-    text-decoration: none;
-    transition: color 0.3s;
-  }
-  
-  a:hover {
-    color: #ffcc00;
-  }
-  
-  /* Navigation Styling */
-  nav {
-    background-color: #2d2d2d;
-    padding: 32px 16px;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 50;
-  }
-  
-  nav .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
+  padding-top: 100px; /* Adjusts for the top nav height */
+}
+
+/* Styling for large screens */
+@media (min-width: 768px) {
   nav h1 {
-    font-size: 36px;
-    font-weight: bold;
-    color: #00aaff;
-    margin-bottom: 16px;
+    font-size: 48px;
   }
-  
-  nav ul {
-    display: flex;
-    justify-content: center;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-  
-  nav ul li {
-    margin: 0 20px;
-  }
-  
+
   nav ul li a {
-    color: #fff;
-    font-size: 18px;
-    text-transform: none; /* Keep text as it is */
-    font-weight: 500;
-    transition: color 0.3s ease;
+    font-size: 20px;
   }
-  
-  nav ul li a:hover {
-    color: #ffcc00;
-  }
-  
-  /* Adding margin-top for content to not overlap with nav */
-  .mt-20 {
-    margin-top: 100px; /* Adjusted to give more space from the top */
-  }
-  
-  /* Footer Styling */
-  footer {
-    background-color: #2d2d2d;
-    color: #fff;
-    padding: 20px 0;
-    text-align: center;
-    margin-top: 40px;
-  }
-  
-  footer a {
-    color: #00aaff;
-    text-decoration: none;
-    margin-left: 10px;
-  }
-  
-  footer a:hover {
-    color: #ffcc00;
-  }
-  
-  footer .footer-info {
-    margin-top: 10px;
-  }
-  
+}
